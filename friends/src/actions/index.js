@@ -8,8 +8,8 @@ export const FAILURE = 'FAILURE';
 
 export const fetchFriends = () => dispatch => {
     dispatch({ type: START });
-    axios.get('/api/friends')
-    .then(res => dispatch({ type: SUCCESS, payload: res.data.results }))
+    axios.get('http://localhost:5000/api/friends')
+    .then(res => dispatch({ type: SUCCESS, payload: res.data }))
     .catch(err => dispatch({ type: FAILURE, payload: err }))
 
 }
