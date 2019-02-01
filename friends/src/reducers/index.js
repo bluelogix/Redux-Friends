@@ -1,12 +1,15 @@
 import 
 { START,
   SUCCESS,
-  FAILURE }  
+  FAILURE,
+  ADD_FRIENDS,
+  ADD_SUCCESS,
+  ADD_FAILURE }  
 from '../actions';
 
 const initialState = {
   fetchingFriends: false,
-//   friendsFetched: false,
+  addingFriends: false,
 //   friendsSaved: false,
 //   savingFriends: false,
 //   updatingFriend: false,
@@ -39,6 +42,29 @@ const initialState = {
                 error: action.payload,
                 fetchingFriends: false
               }
+        case ADD_FRIENDS:
+              return {
+                  ...state,
+                  fetchingFriends: true
+              }
+        case ADD_SUCCESS:
+              return {
+                  ...state,
+                  fetchingFriends: false,
+                  error: null,
+                  friends: action.payload
+                
+              }
+              case ADD_FAILURE:
+              return {
+                ...state,
+                error: action.payload,
+                fetchingFriends: false
+              }
+
+
+
+
       default:
         return state;
     }

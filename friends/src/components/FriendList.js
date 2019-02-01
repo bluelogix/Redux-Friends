@@ -3,7 +3,7 @@ import React from "react";
 
 const FriendList = props => {
   return (
-    <ul>
+    <ul className="cards">
       {props.friends.map(friend => {
         return <Friends  key={friend.id} friend={friend} />;
       })}

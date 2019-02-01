@@ -3,17 +3,22 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux";
 import FriendList from './components/FriendList'
-import { fetchFriends } from './actions';
+import FriendForm from './components/FriendForm'
+import { fetchFriends} from './actions';
 
 
 
 
 
 class App extends Component {
-    // constructor() {
-    //   super();
-    // }
-
+  constructor(props){
+    super(props); 
+    this.state = {
+      name: '',
+      age: '',
+      email: ''
+    }
+  }
 
     componentDidMount() {
       this.props.fetchFriends();
@@ -21,10 +26,16 @@ class App extends Component {
     }
 
 
+
+
   render() {
     return (
       <div className="App">
-        {/* <FriendForm /> */}
+      <h1 className="header">Friends</h1>
+      
+
+
+       <FriendForm />
         <FriendList friends={this.props.friends} />
       </div>
     );
@@ -34,7 +45,7 @@ class App extends Component {
 const mapStateToProps = state =>  ({
     friends: state.friends,
     fetchingFriends: state.fetchingFriends,
-    // error: state.friendReducer.error
+    
    
   });
 
@@ -42,6 +53,6 @@ const mapStateToProps = state =>  ({
 
 export default connect(
   mapStateToProps,
-   { fetchFriends}
+   { fetchFriends }
  )(App);
  

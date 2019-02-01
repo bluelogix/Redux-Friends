@@ -30,3 +30,47 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  color: rgb(116, 196, 250);
+  font-weight: bold;
+  font-size: 40px;
+  font-family: OCR A Std, monospace;
+}
+
+.friendCard {
+  border: 4px solid rgb(116, 196, 250);
+  border-radius: 50%;
+  width: 30%;
+  padding: 20px 0;
+  margin: 30px;
+  background-color: aliceblue;
+ 
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* margin: 80px 80px; */
+  
+
+}
+
+.form input{
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgb(120, 197, 207);
+  color: white;
+  font-size: 20px;
+}
+
+.form button{
+  margin: 20px 0;
+  padding: 10px 40px;
+  border-radius: 10px;
+  background-color: rgb(235, 253, 255);
+  color: black;
+  font-size: 20px;
+}
