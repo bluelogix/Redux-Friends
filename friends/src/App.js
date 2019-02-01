@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from "react-redux";
 import FriendList from './components/FriendList'
 import FriendForm from './components/FriendForm'
-import { fetchFriends} from './actions';
+import { fetchFriends, deleteFriend } from './actions';
 
 
 
@@ -25,7 +25,10 @@ class App extends Component {
       // console.log(this.props.fetchFriends())
     }
 
-
+deleteFriend = (e, id) => {
+  e.preventDefault();
+  this.props.deleteFriend(id);
+}
 
 
   render() {
@@ -36,7 +39,7 @@ class App extends Component {
 
 
        <FriendForm />
-        <FriendList friends={this.props.friends} />
+        <FriendList friends={this.props.friends} deleteFriend={this.deleteFriend} />
       </div>
     );
   }
@@ -53,6 +56,6 @@ const mapStateToProps = state =>  ({
 
 export default connect(
   mapStateToProps,
-   { fetchFriends }
+   { fetchFriends, deleteFriend }
  )(App);
  

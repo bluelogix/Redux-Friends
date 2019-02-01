@@ -5,7 +5,7 @@ const FriendList = props => {
   return (
     <ul className="cards">
       {props.friends.map(friend => {
-        return <Friends  key={friend.id} friend={friend} />;
+        return <Friends  key={friend.id} friend={friend} deleteFriend={props.deleteFriend} />;
       })}
     </ul>
   );
